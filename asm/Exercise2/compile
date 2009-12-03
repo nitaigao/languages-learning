@@ -1,0 +1,3 @@
+nasm -f elf exercise2.asm
+ld -e main -dynamic-linker /lib/ld-linux.so.2 -o exercise2 -lc exercise2.o
+./exercise2
