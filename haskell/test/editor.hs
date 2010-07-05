@@ -9,14 +9,20 @@ render (col,(rows,cols,(x:xs))) = do
   putStr (if column == 0 then "\n" ++ x else x)
   render (column + 1,(rows, cols, xs))
 
-create image input = do
-  let (x:y:_) = map (\x -> (read x::Int)) (tail (words input))
-  let (command:_) = words input
-  let d = take (x * y) (repeat "0")
-  putStrLn ("Created a new image of dimensions " ++ show x ++ " by " ++ show y)
-  ready (x, y, d)
+coords input = map (\x -> (read x::Int)) (tail (words input))
 
-commands = [("I", create), ("S", draw)]
+create image input = do
+  let (x:y:_) = coords input
+  putStrLn ("Created a new image of dimensions " ++ show x ++ " by " ++ show y)
+  ready (x, y, take (x * y) (repeat "0"))
+
+color (cols, rows, image) input = do
+  let (x:y:_) = coords input
+  let (command:_) = words input
+  let index = x + (y * cols)
+  ready (cols, rows, concat [take index image, ["d"], drop (index + 1) image])
+
+commands = [("I", create), ("S", draw), ("L",color)]
 
 ready image = do
   putStrLn "Enter a command:"
