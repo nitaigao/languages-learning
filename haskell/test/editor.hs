@@ -1,13 +1,7 @@
 module Main where
 
-ready image = do
-  putStrLn "Enter a command:"
-  input <- getLine
-  let (command:_) = words input
-  case command of
-    "I" -> create image input
-    "S" -> render (0,image)
-  (ready image)
+draw image input = do
+  (render(0, image))
 
 render (col,(rows, cols,[])) = do putStr "\n\n"
 render (col,(rows,cols,(x:xs))) = do
@@ -16,13 +10,19 @@ render (col,(rows,cols,(x:xs))) = do
   render (column + 1,(rows, cols, xs))
 
 create image input = do
-  let commands = words input 
-  let (command:x:y:_) = commands
-  let xn = (read x::Int)
-  let yn = (read x::Int)
-  let d = take ((read x::Int) * (read y::Int)) (repeat "0")
-  putStrLn ("Created a new image of dimensions " ++ x ++ " by " ++ y)
-  ready (xn, yn, d)
-  
+  let (x:y:_) = map (\x -> (read x::Int)) (tail (words input))
+  let (command:_) = words input
+  let d = take (x * y) (repeat "0")
+  putStrLn ("Created a new image of dimensions " ++ show x ++ " by " ++ show y)
+  ready (x, y, d)
+
+commands = [("I", create), ("S", draw)]
+
+ready image = do
+  putStrLn "Enter a command:"
+  input <- getLine
+  let (command:_) = filter (\x -> fst x == head (words input)) commands in (snd command) image input
+  (ready image)
+
 main = do
   (ready (0,0,[]))
