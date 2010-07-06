@@ -17,11 +17,12 @@ color_coord (cols, rows, image) input = do
   (cols, rows, concat [take index image, [[color]], drop (index + 1) image])
 
 commands = [("I", create), ("L",color_coord)]
+filter_commands input = filter (\x -> fst x == head (words input)) commands
 
 ready image = do
   putStrLn "Enter a command:"
   input <- getLine
-  let (command:_) = filter (\x -> fst x == head (words input)) commands
+  let (command:_) = filter_commands input 
   let image' = (snd command) image input
   if input == "S" 
     then render 0 image
