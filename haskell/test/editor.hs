@@ -1,34 +1,37 @@
 module Main where
 
-render col (rows, cols, []) = do putStr "\n\n"
-render col (rows, cols, (x:xs)) = do
-  let column = if col == cols then 0 else col  
-  putStr (if column == 0 then "\n" ++ x else x)
-  render (column + 1) (rows, cols, xs)
+draw words = do
+  foldl (++) "" words
+
+data Image = Image Int Int [String]
+  deriving (Show)
+
+unknown = putStrLn "Unknown command"
+quit = putStrLn "Quitting"
 
 coords input = map (\x -> (read x::Int)) (tail (words input))
-create image input = let (x:y:_) = coords input in (x, y, take (x * y) (repeat "0"))
+initialize input image = do 
+  let (x:y:_) = coords input in
+    Image x y (take (x * y) (repeat "0"))
 
-color_coord (cols, rows, image) input = do
-  let (x:y:_) = coords input
-  let (command:_) = words input
-  let (color) = last input
-  let index = x + (y * cols)
-  (cols, rows, concat [take index image, [[color]], drop (index + 1) image])
+render col (Image x y d) = do
+  foldr (++) "\n\n" d
 
-commands = [("I", create), ("L",color_coord)]
-filter_commands input = filter (\x -> fst x == head (words input)) commands
-
-ready image = do
-  putStrLn "Enter a command:"
+ready image = do 
+  putStrLn "Enter a command: "
   input <- getLine
-  let (command:_) = filter_commands input 
-  let image' = (snd command) image input
-  if input == "S" 
-    then render 0 image
-    else return () 
-  ready image'
+  let command = head (words input)
+  case command of 
+    "X" -> quit
+    "I" -> do
+      ready image' where image' = initialize input image
+    "S" -> do
+      let text = render 0 image in putStrLn text
+      ready image
+    _   -> do 
+      unknown
+      ready image
 
 main = do
-  ready (0,0,[])
-  return ()
+  let image = Image 0 0 []
+  ready image

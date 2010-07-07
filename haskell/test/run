@@ -1,2 +1,5 @@
+rm a.out
+rm editor.hi
+rm editor.o
 ghc editor.hs
 ./a.out
