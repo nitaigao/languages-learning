@@ -13,9 +13,17 @@ coords input = map (\x -> (read x::Int)) (tail (words input))
 initialize input image = do 
   let (x:y:_) = coords input in
     Image x y (take (x * y) (repeat "0"))
+    
+columnize col cols (x:xs) = do
+  let text = if col == 0 then [x] ++ "\n" else [x]
+  let new_col = if col == 0 then cols else col - 1
+  append text (columnize new_col cols xs)
+  
+columnize _ _ [] = "\n\n"  
 
 render col (Image x y d) = do
-  foldr (++) "\n\n" d
+  let output = foldl (++) "" d
+  columnize x x output
 
 ready image = do 
   putStrLn "Enter a command: "
