@@ -14,16 +14,17 @@ initialize input image = do
   let (x:y:_) = coords input in
     Image x y (take (x * y) (repeat "0"))
     
+columnize :: Int -> Int -> [Char] -> String
 columnize col cols (x:xs) = do
-  let text = if col == 0 then [x] ++ "\n" else [x]
-  let new_col = if col == 0 then cols else col - 1
-  append text (columnize new_col cols xs)
+  let new_col = if col == cols - 1 then 0 else col + 1
+  let text = if col == cols - 1 then [x] ++ "\n" else [x]
+  text ++ (columnize new_col cols xs)
   
-columnize _ _ [] = "\n\n"  
+columnize _ _ [] = "" 
 
-render col (Image x y d) = do
+render (Image x y d) = do
   let output = foldl (++) "" d
-  columnize x x output
+  columnize 0 x output
 
 ready image = do 
   putStrLn "Enter a command: "
@@ -34,7 +35,7 @@ ready image = do
     "I" -> do
       ready image' where image' = initialize input image
     "S" -> do
-      let text = render 0 image in putStrLn text
+      let text = render image in putStrLn text
       ready image
     _   -> do 
       unknown

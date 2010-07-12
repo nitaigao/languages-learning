@@ -1,19 +1,18 @@
 TParticles
 v7
 r0
-t290996002.376995
+t293060428.296076
 cCheck dependencies
-cCompileC build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o /Users/NK/Development/Particles/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
-cLd /Users/NK/Development/Particles/build/Debug/Particles normal x86_64
+cCompileC build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o /Users/NK/Development/Learning/Particles/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
 
 N/Developer/SDKs/MacOSX10.6.sdk
-c000000004B8C13A400000000000000EE
-t1267471268
+c000000004BB9F69C00000000000000EE
+t1270478492
 s238
 
 N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/GLUT.framework/GLUT
-c000000004B8C139E000000000001A494
-t1267471262
+c000000004B99A233000000000001A494
+t1268359731
 s107668
 
 N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/GLUT.framework/Headers/glut.h
@@ -27,8 +26,8 @@ t1266830627
 s5721
 
 N/Developer/SDKs/MacOSX10.6.sdk/System/Library/Frameworks/OpenGL.framework/OpenGL
-c000000004B8C139F000000000000DB14
-t1267471263
+c000000004B99A233000000000000DB14
+t1268359731
 s56084
 
 N/Developer/SDKs/MacOSX10.6.sdk/usr/include/math.h
@@ -45,6 +44,84 @@ N/Developer/SDKs/MacOSX10.6.sdk/usr/include/stdlib.h
 c000000004AC326060000000000002DF5
 t1254303238
 s11765
+
+N/Users/NK/Development/Learning/Particles/2DParticle.h
+c000000004BB0FF5E000000000000017C
+t1269890910
+s380
+i"Particle.h"
+
+N/Users/NK/Development/Learning/Particles/Color.h
+c000000004BB0FEE00000000000000184
+t1269890784
+s388
+
+N/Users/NK/Development/Learning/Particles/ExplosionParticle.h
+c000000004BB0FF570000000000000287
+t1269890903
+s647
+i"2DParticle.h"
+
+N/Users/NK/Development/Learning/Particles/FireFlyParticle.h
+c000000004BB10FB000000000000003DC
+t1269895088
+s988
+i"Particle.h"
+
+N/Users/NK/Development/Learning/Particles/FountainParticle.h
+c000000004BB0FF2D000000000000021F
+t1269890861
+s543
+i"2DParticle.h"
+
+N/Users/NK/Development/Learning/Particles/Matrix.h
+c000000004BB0FEB20000000000000769
+t1269890738
+s1897
+
+N/Users/NK/Development/Learning/Particles/Particle.h
+c000000004BB10F2200000000000007B7
+t1269894946
+s1975
+
+N/Users/NK/Development/Learning/Particles/ParticleSystem.h
+c000000004BB10F4800000000000003ED
+t1269894984
+s1005
+
+N/Users/NK/Development/Learning/Particles/Quaternion.h
+c000000004BB0FEF70000000000000293
+t1269890807
+s659
+
+N/Users/NK/Development/Learning/Particles/Vector.h
+c000000004BB107F3000000000000077E
+t1269893107
+s1918
+
+N/Users/NK/Development/Learning/Particles/build/Debug/Particles
+t1271191875
+s16536
+
+N/Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/Particles.LinkFileList
+c000000004BB105760000000000000072
+t1269892470
+s114
+
+N/Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o
+t2
+s0
+
+N/Users/NK/Development/Learning/Particles/main.cpp
+c000000004BC787D00000000000000452
+t1271367632
+s1106
+i<iostream>
+i<OpenGL/OpenGL.h>
+i<GLUT/GLUT.h>
+i<stdlib.h>
+i<stdio.h>
+i<math.h>
 
 N/Users/NK/Development/Particles/build/Debug/Particles
 t1269303202
@@ -72,7 +149,20 @@ i<math.h>
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies290996002#290996002#0(0"0(0#1#0"4300911832#0"0#
+lSLF07#2@18"Check dependencies293060428#293060428#0(0"0(0#1#0"4300911832#0"0#
+
+CCompileC build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o /Users/NK/Development/Learning/Particles/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
+s293060428.115619
+e293060428.296013
+r0
+xCompileC
+xbuild/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o
+x/Users/NK/Development/Learning/Particles/main.cpp
+xnormal
+xx86_64
+xc++
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@57"Compile /Users/NK/Development/Learning/Particles/main.cpp293060428#293060428#0(190"/Users/NK/Development/Learning/Particles/main.cpp: In function 'void display()':/Users/NK/Development/Learning/Particles/main.cpp:14: error: 'particleSystem' was not declared in this scope1(4@47"'particleSystem' was not declared in this scope293060428#81#109#0(6@49"/Users/NK/Development/Learning/Particles/main.cpp293060427#14#0#14#0#34"'*' was not declared in this scope0(0#0#49"/Users/NK/Development/Learning/Particles/main.cpp4300911832#1349"    cd /Users/NK/Development/Learning/Particles    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Particles-generated-files.hmap -I/Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Particles-own-target-headers.hmap -I/Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Particles-all-target-headers.hmap -iquote /Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Particles-project-headers.hmap -F/Users/NK/Development/Learning/Particles/build/Debug -I/Users/NK/Development/Learning/Particles/build/Debug/include -I/Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/DerivedSources/x86_64 -I/Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/DerivedSources -c /Users/NK/Development/Learning/Particles/main.cpp -o /Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o1#
 
 CCompileC build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o /Users/NK/Development/Particles/main.cpp normal x86_64 c++ com.apple.compilers.gcc.4_2
 s290996002.200371
@@ -86,6 +176,16 @@ xx86_64
 xc++
 xcom.apple.compilers.gcc.4_2
 lSLF07#2@48"Compile /Users/NK/Development/Particles/main.cpp290996002#290996002#0(0"0(0#0#40"/Users/NK/Development/Particles/main.cpp4300911832#1250"    cd /Users/NK/Development/Particles    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch x86_64 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -isysroot /Developer/SDKs/MacOSX10.6.sdk -mfix-and-continue -fvisibility-inlines-hidden -mmacosx-version-min=10.6 -gdwarf-2 -iquote /Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/Particles-generated-files.hmap -I/Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/Particles-own-target-headers.hmap -I/Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/Particles-all-target-headers.hmap -iquote /Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/Particles-project-headers.hmap -F/Users/NK/Development/Particles/build/Debug -I/Users/NK/Development/Particles/build/Debug/include -I/Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/DerivedSources/x86_64 -I/Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/DerivedSources -c /Users/NK/Development/Particles/main.cpp -o /Users/NK/Development/Particles/build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/main.o0#
+
+CLd /Users/NK/Development/Learning/Particles/build/Debug/Particles normal x86_64
+s292884675.613331
+e292884675.636227
+r1
+xLd
+x/Users/NK/Development/Learning/Particles/build/Debug/Particles
+xnormal
+xx86_64
+lSLF07#2@67"Link /Users/NK/Development/Learning/Particles/build/Debug/Particles292884675#292884675#0(0"0(0#0#0"4300911832#550"    cd /Users/NK/Development/Learning/Particles    setenv MACOSX_DEPLOYMENT_TARGET 10.6    /Developer/usr/bin/g++-4.2 -arch x86_64 -isysroot /Developer/SDKs/MacOSX10.6.sdk -L/Users/NK/Development/Learning/Particles/build/Debug -F/Users/NK/Development/Learning/Particles/build/Debug -filelist /Users/NK/Development/Learning/Particles/build/Particles.build/Debug/Particles.build/Objects-normal/x86_64/Particles.LinkFileList -mmacosx-version-min=10.6 -framework OpenGL -framework GLUT -o /Users/NK/Development/Learning/Particles/build/Debug/Particles0#
 
 CLd /Users/NK/Development/Particles/build/Debug/Particles normal x86_64
 s290996002.358910

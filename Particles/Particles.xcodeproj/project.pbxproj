@@ -28,6 +28,16 @@
 
 /* Begin PBXFileReference section */
 		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		4C033BC9116131FA00840EDC /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		4C033BD61161324A00840EDC /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		4C033BDC1161326A00840EDC /* Quaternion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quaternion.h; sourceTree = "<group>"; };
+		4C033BDD1161327700840EDC /* Matrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix.h; sourceTree = "<group>"; };
+		4C033BE0116132AA00840EDC /* Particle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Particle.h; sourceTree = "<group>"; };
+		4C033BE3116132BD00840EDC /* FireFlyParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FireFlyParticle.h; sourceTree = "<group>"; };
+		4C033BEA116132E100840EDC /* FountainParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FountainParticle.h; sourceTree = "<group>"; };
+		4C033BEF1161330000840EDC /* ParticleSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParticleSystem.h; sourceTree = "<group>"; };
+		4C033BFA1161332500840EDC /* ExplosionParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplosionParticle.h; sourceTree = "<group>"; };
+		4C033C31116134E400840EDC /* 2DParticle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 2DParticle.h; sourceTree = "<group>"; };
 		4C35E91F1156B31900D5A5FC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		4C35E94C1156B34F00D5A5FC /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
 		8DD76F6C0486A84900D96B5E /* Particles */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Particles; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +72,16 @@
 			isa = PBXGroup;
 			children = (
 				08FB7796FE84155DC02AAC07 /* main.cpp */,
+				4C033BC9116131FA00840EDC /* Vector.h */,
+				4C033BD61161324A00840EDC /* Color.h */,
+				4C033BDC1161326A00840EDC /* Quaternion.h */,
+				4C033BDD1161327700840EDC /* Matrix.h */,
+				4C033BE0116132AA00840EDC /* Particle.h */,
+				4C033BE3116132BD00840EDC /* FireFlyParticle.h */,
+				4C033BEA116132E100840EDC /* FountainParticle.h */,
+				4C033BEF1161330000840EDC /* ParticleSystem.h */,
+				4C033BFA1161332500840EDC /* ExplosionParticle.h */,
+				4C033C31116134E400840EDC /* 2DParticle.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
