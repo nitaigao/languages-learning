@@ -26,6 +26,13 @@ render (Image x y d) = do
   let output = foldl (++) "" d
   columnize 0 x output
 
+pixel input (Image x y d) = do
+  let (cx:cy:_) = coords input
+  let (command:_) = words input
+  let (color) = last input : []
+  let index = cx + (cy * x)
+  Image x y (concat [(take index d), [color], (drop (index + 1) d)])
+
 ready image = do 
   putStrLn "Enter a command: "
   input <- getLine
@@ -37,6 +44,8 @@ ready image = do
     "S" -> do
       let text = render image in putStrLn text
       ready image
+    "L" -> do
+      ready image' where image' = pixel input image
     _   -> do 
       unknown
       ready image
