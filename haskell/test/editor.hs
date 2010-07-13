@@ -58,6 +58,11 @@ horizontal input image = do
   let columns = [x1..x2]
   color_pixels_x color cy columns image
     
+fill input image = do
+  let (x:y:_) = coords input
+  let (color) = last input : []
+  image
+    
 ready image = do 
   putStrLn "Enter a command: "
   input <- getLine
@@ -75,6 +80,8 @@ ready image = do
       ready image' where image' = vertical input image
     "H" -> do
       ready image' where image' = horizontal input image
+    "F" -> do
+      ready image' where image' = fill input image
     _   -> do 
       unknown
       ready image
