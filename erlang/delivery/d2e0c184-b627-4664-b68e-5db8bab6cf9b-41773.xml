@@ -1,0 +1,13 @@
+<delivery>
+  <environment>Live B</environment>
+  <tokens>d2e0c184-b627-4664-b68e-5db8bab6cf9b-41773-tokens.zip</tokens>
+  <code>d2e0c184-b627-4664-b68e-5db8bab6cf9b-41773-code.zip</code>
+  <path>/uSwitch/gas-electricity-service</path>
+  <installationpath>d:\data</installationpath>
+  <servers>
+    <server hostname="web5" ipaddress="10.1.12.105" alias="Live Web 5" />
+    <server hostname="web6" ipaddress="10.1.12.106" alias="Live Web 6" />
+    <server hostname="web7" ipaddress="10.1.12.107" alias="Live Web 7" />
+    <server hostname="web8" ipaddress="10.1.12.108" alias="Live Web 8" />
+  </servers>
+</delivery>
