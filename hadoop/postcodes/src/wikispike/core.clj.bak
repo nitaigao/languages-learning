@@ -1,0 +1,47 @@
+(ns wikispike.core
+  (require 
+    [clojure-hadoop.defjob :as defjob]
+    [clojure-hadoop.imports :as imp]
+    [clojure-hadoop.wrap :as wrap]))
+
+(imp/import-io)
+(imp/import-mapred)
+
+(defn wordcount
+  [offset line]
+  [["hello", 1]])
+  
+(defn sum-words [key values-fn]
+  [[key (reduce + (values-fn))]])
+
+(defn string-long-writer [#^OutputCollector output
+                          #^String key value]
+  (.collect output (Text. key) (LongWritable. value)))
+  
+(defn string-long-reduce-reader [#^Text key wvalues]
+  [(.toString key)
+   (fn [] (map (fn [#^LongWritable v] (.get v))
+               (iterator-seq wvalues)))])
+
+(defn string-long-writer [#^OutputCollector output
+                         #^String key value]
+ (.collect output (Text. key) (LongWritable. value)))
+
+(defjob/defjob job
+  :map wordcount
+  :map-reader wrap/int-string-map-reader
+  :map-writer string-long-writer
+  :reduce sum-words
+  :reduce-reader string-long-reduce-reader
+  :reduce-writer string-long-writer
+  :output-key Text
+  :output-value LongWritable
+  :output-format :text
+  :input-format :text
+  :compress-output false)
+
+  ;:input-format "forward.XmlInputFormat"
+  
+  
+; java -cp report-service-standalone.jar clojure_hadoop.job -job report-service.process/job -input ~/uswitch-hive-keywords.xml -output output -set "xmlinput.start=<row " -set "xmlinput.end=</row>" -set "xml-to-csv.columns=kwDestUrl,clicks"
+; java -cp report-service-standalone.jar clojure_hadoop.job -job wikispike.core/job -input s3n://postcodes/uk-postcodes -output s3n://postcodes-output/output/
